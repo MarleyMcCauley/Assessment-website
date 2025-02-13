@@ -1,0 +1,46 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<div class="container">
+
+    <p>Welcome to The Mediocre Game Review (aka. MGR).This is a place for all of your down right terrible or Mediocre game reviews please do not think your opinion matters because it does not yours truly MGR .</p>
+    
+    
+    {% if session['username'] %}
+        <br>
+        <p>Hello {{ session['username'] }}</p>
+
+        <a href="/add"><button>Add Review</button></a>
+
+    {% endif %}
+    
+</div>
+
+<br>
+
+<table class="guess_table">
+
+    <thead>
+        <th>Date</th>
+        <th>User who Reviewed</th>
+        <th>Game</th>
+        <th>Rating</th>
+        <th>Review</th>
+    </thead>
+
+    <tbody>
+        {% for guess in guesses %}
+        <tr>
+            <td>{{ guess['date'] }}</td>
+            <td>{{ guess['username'] }}</td>
+            <td>{{ guess['game'] }}</td>
+            <td>{{ guess['score'] }}</td>
+            <td>{{ guess['review'] }}</td>
+        </tr>
+        {% endfor %}
+    </tbody>
+
+</table>
+
+{% endblock %}
