@@ -63,7 +63,7 @@ def Add():
        
         db.AddGuess(user_id, date, game, score, review)
 
-    return render_template("add.html")
+  
 
 
 

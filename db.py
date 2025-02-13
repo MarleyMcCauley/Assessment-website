@@ -13,7 +13,8 @@ def GetAllGuesses():
 
     db = GetDB()
     guesses = db.execute("""SELECT Guesses.date, Guesses.game, Guesses.score, Users.username,Guesses.review
-                            FROM Guesses JOIN Users ON Guesses.user_id = Users.id""").fetchall()
+                            FROM Guesses JOIN Users ON Guesses.user_id = Users.id
+                            ORDER BY date DESC""").fetchall()
     db.close()
     return guesses
 
@@ -60,3 +61,5 @@ def AddGuess(user_id, date, game, score, review):
     db.commit()
 
     return True
+
+

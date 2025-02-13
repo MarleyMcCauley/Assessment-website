@@ -7,9 +7,11 @@
 }
 
 body {
-    background: #fdfdfd;
     font-family: "Nunito", sans-serif;
     font-size: 1rem;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center;
 }
 
 main {
@@ -17,6 +19,7 @@ main {
     margin: auto;
     padding: 1rem;
     line-height: 1.5;
+    background-color:#f2f2f2;
 }
 
 .banner {
